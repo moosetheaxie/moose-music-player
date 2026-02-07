@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.moose.musicplayer.tunnel</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/moose/.openclaw/workspace/music-player-web/start-tunnel.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>MOOSE_BACKEND_PORT</key>
+        <string>8080</string>
+        <key>MOOSE_NGROK_DOMAIN</key>
+        <string></string>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/tmp/moose-music-tunnel.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/moose-music-tunnel-error.log</string>
+</dict>
+</plist>
