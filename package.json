@@ -1,0 +1,9 @@
+{
+  "name": "moose-music-player-web",
+  "version": "1.0.0",
+  "description": "Web UI for Moose Music Player - Control your local music from anywhere",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  }
+}
