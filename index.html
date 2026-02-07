@@ -267,6 +267,23 @@
             padding: 20px;
             color: rgba(255, 255, 255, 0.5);
         }
+
+        .backend-config {
+            display: none;
+            margin-bottom: 10px;
+        }
+
+        .backend-config.show {
+            display: block;
+        }
+
+        .backend-toggle {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -276,10 +293,11 @@
             <p>YouTube Music Search</p>
         </div>
         
-        <div class="backend-config">
-            <label>🔗 Backend URL (ngrok)</label>
+        <div class="backend-config" id="backend-config">
+            <label>🔗 Backend URL (advanced)</label>
             <input type="text" id="backend-url" placeholder="https://your-ngrok-url.ngrok.io" value="">
         </div>
+        <div class="backend-toggle" onclick="toggleBackendConfig()">⚙️ Backend settings</div>
         
         <div class="search-box">
             <input type="text" id="search-input" placeholder="🔍 Search YouTube Music..." 
@@ -310,7 +328,7 @@
                    onchange="setVolume(this.value)">
         </div>
         
-        <div class="status" id="status">Enter backend URL and search for songs</div>
+        <div class="status" id="status">Connecting to backend...</div>
     </div>
     
     <script>
@@ -321,6 +339,10 @@
         function getBackendUrl() {
             const url = document.getElementById('backend-url').value.trim();
             return url || 'http://localhost:8080';
+        }
+
+        function toggleBackendConfig() {
+            document.getElementById('backend-config').classList.toggle('show');
         }
         
         function debounceSearch() {
@@ -460,6 +482,9 @@
                 const savedUrl = localStorage.getItem('moose-backend-url');
                 if (savedUrl) {
                     document.getElementById('backend-url').value = savedUrl;
+                    updateStatus('Connected! Search for songs.', 'connected');
+                } else {
+                    updateStatus('Run ./play.sh on Mac mini to auto-connect backend.', 'error');
                 }
             }
         };

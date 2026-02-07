@@ -45,7 +45,7 @@ if [ -n "$TUNNEL_URL" ]; then
     echo ""
     
     # Open web UI with URL parameter
-    WEB_URL="https://moose-music-player-k1trcbecd-mooses-projects-082601d3.vercel.app/?backend=${TUNNEL_URL#https://}"
+    WEB_URL="https://moose-music-player.vercel.app/?backend=${TUNNEL_URL#https://}"
     open "$WEB_URL"
     
     echo "📱 Web UI opened in browser!"
