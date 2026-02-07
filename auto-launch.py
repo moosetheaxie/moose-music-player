@@ -29,7 +29,7 @@ class MusicLauncher:
             stderr=subprocess.PIPE
         )
         time.sleep(2)
-        print("✅ Server running on http://localhost:5000")
+        print("✅ Server running on http://localhost:8080")
         
     def start_ngrok(self):
         """Start ngrok tunnel"""
@@ -144,7 +144,7 @@ class MusicLauncher:
         print("\n" + "="*60)
         print("🎵 Moose Music Player is RUNNING!")
         print("="*60)
-        print(f"\n🖥️  Local Server: http://localhost:5000")
+        print(f"\n🖥️  Local Server: http://localhost:8080")
         if self.ngrok_url:
             print(f"🌐 Public URL:   {self.ngrok_url}")
         print(f"\n🌐 Web UI:       https://moose-music-player-k1trcbecd-mooses-projects-082601d3.vercel.app")

@@ -24,7 +24,7 @@ def main():
     
     print("✅ ngrok found")
     print()
-    print("🚀 Starting music server on http://localhost:5000...")
+    print("🚀 Starting music server on http://localhost:8080...")
     print()
     
     # Start the server

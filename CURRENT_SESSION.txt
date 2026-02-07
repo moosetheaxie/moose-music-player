@@ -1,0 +1,12 @@
+# Moose Music Player - Current Session
+
+**Backend URL:** https://burl-nontonic-capitularly.ngrok-free.dev
+**Web UI:** https://moose-music-player-k1trcbecd-mooses-projects-082601d3.vercel.app
+**Local Server:** http://localhost:8080
+
+**To play:**
+1. Open Web UI
+2. Paste backend URL
+3. Click song name!
+
+**Next time:** Just run `./play.sh`
