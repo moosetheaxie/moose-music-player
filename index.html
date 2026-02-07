@@ -363,7 +363,8 @@
             resultsDiv.innerHTML = '<div class="loading">🔍 Searching YouTube Music...</div>';
             
             fetch(`${backendUrl}/search?q=${encodeURIComponent(query)}`, {
-                mode: 'cors'
+                mode: 'cors',
+                headers: { 'ngrok-skip-browser-warning': '1' }
             })
             .then(response => response.json())
             .then(data => {
@@ -410,7 +411,10 @@
             
             fetch(`${backendUrl}/play`, {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '1'
+                },
                 body: JSON.stringify({video_id: videoId}),
                 mode: 'cors'
             })
@@ -445,6 +449,7 @@
             const backendUrl = getBackendUrl();
             fetch(`${backendUrl}/stop`, {
                 method: 'POST',
+                headers: { 'ngrok-skip-browser-warning': '1' },
                 mode: 'cors'
             })
             .then(() => {
@@ -458,7 +463,10 @@
             const backendUrl = getBackendUrl();
             fetch(`${backendUrl}/volume`, {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '1'
+                },
                 body: JSON.stringify({volume: value}),
                 mode: 'cors'
             });
